@@ -55,6 +55,7 @@ class MainMenuState extends MusicBeatState
 	var Gift:Bool = false;
 	var Thonk:Bool = false;
 	var GraceSelected:Bool = false;
+	var 
 
 	var ThinkUnlocked:Bool = false;
 	var ScaryNightUnlocked:Bool = false;
@@ -252,9 +253,12 @@ class MainMenuState extends MusicBeatState
 		#end
 
     #if android
-  	addVirtualPad(FULL, A_B);
+  	addVirtualPad(FULL, A_B_c);
     #end
 
+	    #if android
+addPadCamera();
+#end
 		super.create();
 	}
 
@@ -683,7 +687,6 @@ class MainMenuState extends MusicBeatState
 		if (FlxG.android.justReleased.BACK)
 		{
 			FlxG.stage.window.textInputEnabled = true;
-			FlxG.stage.window.onTextInput.add(secretFunction);
 		}
 		#end
 
@@ -748,11 +751,6 @@ class MainMenuState extends MusicBeatState
 
 			if (controls.BACK)
 			{
-				#if android
-				FlxG.stage.window.textInputEnabled = false;
-				if (FlxG.stage.window.onTextInput.has(eastereggFunction))
-					FlxG.stage.window.onTextInput.remove(eastereggFunction);
-				#end
 				selectedSomethin = true;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 				MusicBeatState.switchState(new TitleState());
@@ -935,8 +933,6 @@ class MainMenuState extends MusicBeatState
 		{
 			#if android
 			FlxG.stage.window.textInputEnabled = false;
-			if (FlxG.stage.window.onTextInput.has(eastereggFunction))
-				FlxG.stage.window.onTextInput.remove(eastereggFunction);
 			#end
 			arrows.visible = false;
 			FlxTween.tween(tape1, {y: 450}, 0.95, {ease: FlxEase.cubeIn});
@@ -976,8 +972,6 @@ class MainMenuState extends MusicBeatState
 		{
 			#if android
 			FlxG.stage.window.textInputEnabled = false;
-			if (FlxG.stage.window.onTextInput.has(eastereggFunction))
-				FlxG.stage.window.onTextInput.remove(eastereggFunction);
 			#end
 			arrows.visible = false;
 			FlxTween.tween(tape1, {y: 800}, 0.55, {ease: FlxEase.cubeIn});
@@ -1017,8 +1011,6 @@ class MainMenuState extends MusicBeatState
 		{
 			#if android
 			FlxG.stage.window.textInputEnabled = false;
-			if (FlxG.stage.window.onTextInput.has(eastereggFunction))
-				FlxG.stage.window.onTextInput.remove(eastereggFunction);
 			#end
 			arrows.visible = false;
 			FlxTween.tween(tape1, {y: 800}, 0.55, {ease: FlxEase.cubeIn});
@@ -1058,8 +1050,6 @@ class MainMenuState extends MusicBeatState
 		{
 			#if android
 			FlxG.stage.window.textInputEnabled = false;
-			if (FlxG.stage.window.onTextInput.has(eastereggFunction))
-				FlxG.stage.window.onTextInput.remove(eastereggFunction);
 			#end
 			arrows.visible = false;
 			FlxTween.tween(tape1, {y: 800}, 0.55, {ease: FlxEase.cubeIn});
@@ -1099,8 +1089,6 @@ class MainMenuState extends MusicBeatState
 		{
 			#if android
 			FlxG.stage.window.textInputEnabled = false;
-			if (FlxG.stage.window.onTextInput.has(eastereggFunction))
-				FlxG.stage.window.onTextInput.remove(eastereggFunction);
 			#end
 			arrows.visible = false;
 			FlxTween.tween(tape1, {y: 800}, 0.55, {ease: FlxEase.cubeIn});
@@ -1140,8 +1128,6 @@ class MainMenuState extends MusicBeatState
 		{
 			#if android
 			FlxG.stage.window.textInputEnabled = false;
-			if (FlxG.stage.window.onTextInput.has(eastereggFunction))
-				FlxG.stage.window.onTextInput.remove(eastereggFunction);
 			#end
 			arrows.visible = false;
 			FlxTween.tween(tape1, {y: 800}, 0.55, {ease: FlxEase.cubeIn});
