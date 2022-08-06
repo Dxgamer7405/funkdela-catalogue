@@ -55,7 +55,7 @@ class MainMenuState extends MusicBeatState
 	var Gift:Bool = false;
 	var Thonk:Bool = false;
 	var GraceSelected:Bool = false;
-	var 
+	//var 
 
 	var ThinkUnlocked:Bool = false;
 	var ScaryNightUnlocked:Bool = false;
