@@ -253,12 +253,10 @@ class MainMenuState extends MusicBeatState
 		#end
 
     #if android
-  	addVirtualPad(FULL, A_B_c);
+  	addVirtualPad(FULL, A_B_C);
+  	addPadCamera();
     #end
-
-	    #if android
-addPadCamera();
-#end
+    
 		super.create();
 	}
 
